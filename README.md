@@ -1,4 +1,4 @@
-# gnrl-store
+# online-store
 
 > Online shop using Vue & Element UI
 

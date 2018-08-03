@@ -1,8 +1,8 @@
 {
-  "name": "gnrl-store",
+  "name": "online-store",
   "version": "1.0.0",
   "description": "Online shop using Vue & Element UI",
-  "author": "santiago.gonzalez.erazo@gmail.com",
+  "author": "Santiago González Erazo <santiago.gonzalez.erazo@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
