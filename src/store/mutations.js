@@ -1,3 +1,7 @@
+// import { productSchema } from './schemas'
+// import { normalize } from 'normalizr'
+// import merge from "lodash/object/merge"
+
 import {
   ADD_PRODUCT,
   ADD_PRODUCT_SUCCESS,
@@ -12,32 +16,27 @@ import {
   ALL_PRODUCTS,
   ALL_PRODUCTS_SUCCESS,
   ALL_MANUFACTURERS,
-  ALL_MANUFACTURERS_SUCCESS
+  ALL_MANUFACTURERS_SUCCESS,
+  ERROR_MSG
 } from './mutation-types'
 
 export const productMutations = {
   [ALL_PRODUCTS] (state) {
-    // Called when fetching products
     state.showLoader = true
+    // this[]
   },
   [ALL_PRODUCTS_SUCCESS] (state, payload) {
-    // Called when products have been fetched
     state.showLoader = false
-    // Updates state products
     state.products = payload
   },
   [PRODUCT_BY_ID] (state) {
-    // Called when fetching products by ID
     state.showLoader = true
   },
   [PRODUCT_BY_ID_SUCCESS] (state, payload) {
-    // Called when product is fetched
     state.showLoader = false
-    // Updates state product
     state.product = payload
   },
   [ADD_PRODUCT]: (state, payload) => {
-    // ...Same pattern
     state.showLoader = true
   },
   [ADD_PRODUCT_SUCCESS]: (state, payload) => {
@@ -65,7 +64,8 @@ export const productMutations = {
     const index = state.products.findIndex(p => p._id === payload)
     console.debug('index', index)
     state.products.splice(index, 1)
-  }
+  },
+  [ERROR_MSG] (state, payload) {}
 }
 
 export const cartMutations = {

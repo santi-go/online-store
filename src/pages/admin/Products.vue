@@ -16,7 +16,7 @@
               <td>${{product.price}}</td>
               <td>{{product.manufacturer.name}}</td>
               <td><router-link :to="'/admin/edit/'+product._id"><i class="fa fa-pencil-square-o"></i></router-link></td>
-              <td><a @click="deleteProduct(product._id)" ><i class="fa fa-trash"></i></a></td>
+              <td><a @click="deleteProduct(product._id)"><i class="fa fa-trash"></i></a></td>
             </tr>
             </tbody>
           </table>
@@ -25,6 +25,10 @@
 
 <script>
   export default {
+    data () {
+      return {
+      }
+    },
     computed: {
       products () {
         return this.$store.getters.allProducts
@@ -37,6 +41,7 @@
     },
     methods: {
       deleteProduct (id) {
+        console.log(id)
         this.$store.dispatch('removeProduct', id)
       }
     }

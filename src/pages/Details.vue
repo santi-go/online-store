@@ -1,8 +1,12 @@
 <template>
+  <!--<transition-->
+    <!--name="custom"-->
+    <!--enter-active-class="animated zoomIn"-->
+  <!--&gt;-->
   <div>
-    <product-details :product="product" :isAdding="true" ></product-details>
+    <product-details :product="product" :isAdding="true"></product-details>
   </div>
-
+  <!--</transition>-->
 </template>
 
 <script>
@@ -16,6 +20,11 @@
     computed: {
       product () {
         return this.$store.getters.productById(this.$route.params['id'])
+      }
+    },
+    data () {
+      return {
+//        product: this.$store.getters.productById(this.$route.params['id'])
       }
     },
     components: {

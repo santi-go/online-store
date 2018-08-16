@@ -3,7 +3,7 @@
     @save-product="updateProduct"
     :model="model"
     :manufacturers="manufacturers"
-    :isEditing="true" ></product-form>
+    :isEditing="true"></product-form>
 </template>
 
 <script>
@@ -16,6 +16,14 @@
       }
       if (this.manufacturers.length === 0) {
         this.$store.dispatch('allManufacturers')
+      }
+    },
+    data () {
+      console.log(this.$store.getters.allManufacturers)
+//      const productById = this.$store.getters.productById(this.$route.params['id'])
+      return {
+//        model: {}
+//        model: this.$store.getters.productById(this.$route.params['id'])
       }
     },
     computed: {
