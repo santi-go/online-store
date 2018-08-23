@@ -19,7 +19,7 @@ import {
 export const productActions = {
   allProducts ({commit}) {
     commit(ALL_PRODUCTS)
-    axios.get(`${API_BASE}/products`).then(response => {
+    axios.get(`${API_BASE}`).then(response => {
       commit(ALL_PRODUCTS_SUCCESS, response.data)
     })
   },
